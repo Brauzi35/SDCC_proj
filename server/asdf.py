@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from callLambda import *
 from Prevision import *
 
+
+
 app = Flask(__name__)
 
 
@@ -46,9 +48,7 @@ def esegui_funzione():
         return jsonify({'errore': str(e)})
 
 
-def tua_funzione(input_string):
-    # Qui puoi eseguire la tua logica e restituire una stringa di risultato
-    return f'Hai inviato: {input_string}'
+
 
 
 if __name__ == '__main__':
