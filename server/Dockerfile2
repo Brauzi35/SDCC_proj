@@ -1,0 +1,20 @@
+# Usa l'immagine di Python
+FROM python:3.9
+
+# Copia il codice Python nel container
+COPY pyfunc2.py /app/pyfunc2.py
+#COPY pyfunc1.py /app/pyfunc1.py
+
+# Imposta la directory di lavoro
+WORKDIR /app
+
+# Installa le dipendenze se ne hai bisogno (in questo caso, Flask)
+RUN pip install flask
+
+# Esponi la porta 5000 per le richieste HTTP
+#EXPOSE 8080
+#EXPOSE 512
+
+# Esegui il codice Python quando il container viene avviato
+CMD ["python", "pyfunc2.py"]
+
